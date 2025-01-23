@@ -1,0 +1,12 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\nicoa\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v22.12.0
+3 silly config load:file:C:\Users\nicoa\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\nicoa\Desktop\Coderhouse\Alvaredo_Entrega1_Backend_I\.npmrc
+5 silly config load:file:C:\Users\nicoa\.npmrc
+6 silly config load:file:C:\Users\nicoa\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm run dev
+8 verbose argv "run" "dev"
+9 verbose logfile logs-max:10 dir:C:\Users\nicoa\Desktop\Coderhouse\Alvaredo_Entrega1_Backend_I\UsersnicoaAppDataRoamingnpm-cache\_logs\2025-01-23T21_48_31_061Z-
+10 verbose logfile C:\Users\nicoa\Desktop\Coderhouse\Alvaredo_Entrega1_Backend_I\UsersnicoaAppDataRoamingnpm-cache\_logs\2025-01-23T21_48_31_061Z-debug-0.log
+11 silly logfile done cleaning log files
