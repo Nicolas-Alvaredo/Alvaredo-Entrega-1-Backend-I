@@ -70,33 +70,35 @@ class CartManager {
         }
     }
 
-    // Agregar un producto al carrito
-    async addProductToCart(cid, pid, quantity) {
-      try {
-          const carts = await this.getAllCarts();
-          const cartIndex = carts.findIndex(c => c.id.toString() === cid.toString());
-  
-          if (cartIndex === -1) {
-              throw new Error(`No se encontró el carrito con ID: ${cid}`);
-          }
-  
-          const cart = carts[cartIndex];
-  
-          // Validar si el producto ya existe en el carrito
-          const productIndex = cart.products.findIndex(p => p.product.toString() === pid.toString());
-  
-          if (productIndex !== -1) {
-              cart.products[productIndex].quantity += quantity; // Sumar la cantidad enviada en el body
-          } else {
-              cart.products.push({ product: pid.toString(), quantity }); // Añadir la cantidad del body
-          }
-  
-          await this.saveToFile(carts);
-          return cart;
-      } catch (error) {
-          throw new Error(`Error al agregar producto al carrito: ${error.message}`);
-      }
-  }
+    // Agregar un producto al carrito (incrementa en 1 si ya existe)
+    async addProductToCart(cid, pid) {
+        try {
+            const carts = await this.getAllCarts();
+            const cartIndex = carts.findIndex(c => c.id.toString() === cid.toString());
+
+            if (cartIndex === -1) {
+                throw new Error(`No se encontró el carrito con ID: ${cid}`);
+            }
+
+            const cart = carts[cartIndex];
+
+            // Buscar el producto en el carrito
+            const productIndex = cart.products.findIndex(p => p.product.toString() === pid.toString());
+
+            if (productIndex !== -1) {
+                // Si el producto ya existe, incrementar la cantidad
+                cart.products[productIndex].quantity += 1;
+            } else {
+                // Si no existe, agregar el producto con cantidad 1
+                cart.products.push({ product: pid.toString(), quantity: 1 });
+            }
+
+            await this.saveToFile(carts);
+            return cart;
+        } catch (error) {
+            throw new Error(`Error al agregar producto al carrito: ${error.message}`);
+        }
+    }
   
 
     // Eliminar un carrito por ID

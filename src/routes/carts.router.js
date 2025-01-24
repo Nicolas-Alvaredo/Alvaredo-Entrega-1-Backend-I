@@ -24,21 +24,16 @@ router.get('/:cid', async (req, res) => {
     }
 });
 
-// Agregar un producto a un carrito específico con cantidad
+// Agregar un producto al carrito (incrementando cantidad en 1 cada vez)
 router.post('/:cid/product/:pid', async (req, res) => {
-  try {
-      const { cid, pid } = req.params;
-      const { quantity } = req.body;
-
-      if (!quantity || quantity <= 0) {
-          return res.status(400).json({ error: "La cantidad debe ser mayor a 0" });
-      }
-
-      const updatedCart = await cartManager.addProductToCart(cid, pid, quantity);
-      res.status(200).json(updatedCart);
-  } catch (error) {
-      res.status(404).json({ error: error.message });
-  }
+    try {
+        const { cid, pid } = req.params;
+        
+        const updatedCart = await cartManager.addProductToCart(cid, pid);
+        res.status(200).json(updatedCart);
+    } catch (error) {
+        res.status(404).json({ error: error.message });
+    }
 });
 
 // Eliminar un carrito por ID
