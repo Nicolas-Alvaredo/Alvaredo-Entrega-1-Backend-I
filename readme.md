@@ -25,8 +25,6 @@ Los datos de productos y carritos se almacenan en archivos JSON (`products.json`
 
 ## 🛠️ Instalación y ejecución
 
-1. Clona el repositorio:
-
    ```bash
    npm install
     ```
