@@ -1,4 +1,4 @@
-# Entrega Backend - Gestión de Productos y Carritos
+# 1er Entrega Backend I - Gestión de Productos y Carritos
 
 Este proyecto es una API desarrollada en **Node.js** y **Express** que permite gestionar productos y carritos de compras mediante diferentes endpoints.
 
