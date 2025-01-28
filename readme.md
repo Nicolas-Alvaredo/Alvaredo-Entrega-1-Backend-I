@@ -23,7 +23,7 @@ Este proyecto es una API desarrollada en **Node.js** y **Express** que permite g
 
 Los datos de productos y carritos se almacenan en archivos JSON (`products.json` y `carts.json`) utilizando el sistema de archivos de Node.js (**fs**).
 
-## 🛠️ Instalación y ejecución
+## 🛠️ Instalación
 
 ```bash
    npm install
