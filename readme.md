@@ -29,6 +29,7 @@ Los datos de productos y carritos se almacenan en archivos JSON (`products.json`
    npm install
     ```
 
+
    ```bash
    npm start
     ```
