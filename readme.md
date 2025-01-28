@@ -25,11 +25,12 @@ Los datos de productos y carritos se almacenan en archivos JSON (`products.json`
 
 ## 🛠️ Instalación y ejecución
 
-   ```bash
+```bash
    npm install
-    ```
+```
 
+## 🛠️ Ejecución
 
-   ```bash
+```bash
    npm start
-    ```
+```
