@@ -1,6 +1,7 @@
 // Gestión de productos
 const fs = require('fs').promises;
 const path = require('path');
+const crypto = require('crypto');
 
 class ProductManager {
     constructor(filePath) {
@@ -47,7 +48,7 @@ class ProductManager {
         }
 
         const newProduct = {
-            id: Date.now().toString(),
+            id: crypto.randomUUID(),
             title,
             description,
             code,

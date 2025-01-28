@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
+const crypto = require('crypto');
 
 // Definir la ruta del archivo JSON para carritos
 const cartsFilePath = path.join(__dirname, '../data/carts.json');
@@ -59,7 +60,7 @@ class CartManager {
     async createCart() {
         try {
             const carts = await this.getAllCarts();
-            const newCart = { id: Date.now().toString(), products: [] };
+            const newCart = { id: crypto.randomUUID(), products: [] };
 
             carts.push(newCart);
             await this.saveToFile(carts);
